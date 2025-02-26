@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `banking` (
   `balance` int(11) DEFAULT 0,
   `label` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.banking: ~0 rows (aproximadamente)
 DELETE FROM `banking`;
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `bank_cards` (
   `active` int(11) NOT NULL DEFAULT 0,
   `passCode` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.bank_cards: ~0 rows (aproximadamente)
 DELETE FROM `bank_cards`;
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `bank_history` (
   `type` varchar(50) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.bank_history: ~0 rows (aproximadamente)
 DELETE FROM `bank_history`;
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `bank_process` (
   `text` text NOT NULL,
   `created` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.bank_process: ~0 rows (aproximadamente)
 DELETE FROM `bank_process`;
@@ -181,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `boombox_songs` (
   `identifier` varchar(64) NOT NULL,
   `label` varchar(30) NOT NULL,
   `link` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.boombox_songs: ~0 rows (aproximadamente)
 DELETE FROM `boombox_songs`;
@@ -200,7 +200,7 @@ DELETE FROM `cardealer_vehicles`;
 -- Volcando estructura para tabla newsite.casino_cache
 CREATE TABLE IF NOT EXISTS `casino_cache` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Settings` text CHARACTER SET utf8mb4 COLLATE utf8mb4_slovak_ci NOT NULL,
+  `Settings` text CHARACTER SET utf8mb3 COLLATE utf8mb3_slovak_ci NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
@@ -268,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `crypto` (
   `worth` int(11) NOT NULL DEFAULT 0,
   `history` text DEFAULT NULL,
   PRIMARY KEY (`crypto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.crypto: ~1 rows (aproximadamente)
 DELETE FROM `crypto`;
@@ -282,7 +282,7 @@ CREATE TABLE IF NOT EXISTS `crypto_history` (
   `name` varchar(50) NOT NULL DEFAULT '0',
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.crypto_history: ~0 rows (aproximadamente)
 DELETE FROM `crypto_history`;
@@ -296,7 +296,7 @@ CREATE TABLE IF NOT EXISTS `crypto_transactions` (
   `date` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE,
   KEY `citizenid` (`citizenid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.crypto_transactions: ~0 rows (aproximadamente)
 DELETE FROM `crypto_transactions`;
@@ -310,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `darkchat_messages` (
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.darkchat_messages: ~0 rows (aproximadamente)
 DELETE FROM `darkchat_messages`;
@@ -399,7 +399,7 @@ CREATE TABLE IF NOT EXISTS `discord_accounts` (
   `username` varchar(50) NOT NULL DEFAULT '0',
   `password` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.discord_accounts: ~0 rows (aproximadamente)
 DELETE FROM `discord_accounts`;
@@ -409,7 +409,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_callsigns` (
   `identifier` varchar(46) NOT NULL,
   `callsign` varchar(50) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_callsigns: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_callsigns`;
@@ -421,9 +421,9 @@ CREATE TABLE IF NOT EXISTS `dispatch_cameras` (
   `model` varchar(50) NOT NULL,
   `coords` varchar(255) NOT NULL,
   `type` varchar(50) DEFAULT NULL,
-  `metadata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `metadata` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_cameras: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_cameras`;
@@ -452,7 +452,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_bolos` (
   `officers_involved` text DEFAULT NULL,
   `createdAt` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_mdt_bolos: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_mdt_bolos`;
@@ -464,7 +464,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_convictions` (
   `charges` text DEFAULT NULL,
   `warrant` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_mdt_convictions: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_mdt_convictions`;
@@ -478,7 +478,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_data` (
   `pfp` text DEFAULT NULL,
   `notes` mediumtext DEFAULT NULL,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_mdt_data: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_mdt_data`;
@@ -495,7 +495,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_incidents` (
   `officers_involved` text DEFAULT NULL,
   `createdAt` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_mdt_incidents: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_mdt_incidents`;
@@ -508,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_players_database` (
   `dataobj` longtext NOT NULL,
   `createdAt` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_players_database: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_players_database`;
@@ -522,7 +522,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_vehicle_database` (
   `data` longtext DEFAULT NULL,
   `createdAt` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.dispatch_vehicle_database: ~0 rows (aproximadamente)
 DELETE FROM `dispatch_vehicle_database`;
@@ -540,9 +540,9 @@ CREATE TABLE IF NOT EXISTS `doorscreator_buildings` (
   `required_code` varchar(50) DEFAULT NULL,
   `auto_closure_seconds` int(11) DEFAULT NULL,
   `requires_identifier` int(11) NOT NULL DEFAULT 0,
-  `allowed_identifiers` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `allowed_identifiers` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.doorscreator_buildings: ~0 rows (aproximadamente)
 DELETE FROM `doorscreator_buildings`;
@@ -551,7 +551,7 @@ DELETE FROM `doorscreator_buildings`;
 CREATE TABLE IF NOT EXISTS `doorscreator_doors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(50) NOT NULL,
-  `doors` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `doors` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `default_state` tinyint(4) NOT NULL DEFAULT 0,
   `icon_coords` longtext NOT NULL,
   `max_distance` int(11) NOT NULL,
@@ -565,16 +565,16 @@ CREATE TABLE IF NOT EXISTS `doorscreator_doors` (
   `parent_building` int(11) DEFAULT NULL,
   `is_sliding` int(11) NOT NULL DEFAULT 0,
   `requires_identifier` int(11) NOT NULL DEFAULT 0,
-  `allowed_identifiers` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `allowed_identifiers` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `vault` longtext DEFAULT NULL,
   `can_be_lockpicked` int(11) NOT NULL DEFAULT 1,
   `alert_police_on_lockpick` int(11) NOT NULL DEFAULT 0,
   `shop_id` int(11) DEFAULT NULL,
   `display_icon` tinyint(4) NOT NULL DEFAULT 1,
-  `sounds_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `sounds_data` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.doorscreator_doors: ~0 rows (aproximadamente)
 DELETE FROM `doorscreator_doors`;
@@ -600,7 +600,7 @@ CREATE TABLE IF NOT EXISTS `facetime_call_history` (
   `calledId` varchar(50) DEFAULT NULL,
   `time` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.facetime_call_history: ~0 rows (aproximadamente)
 DELETE FROM `facetime_call_history`;
@@ -736,7 +736,7 @@ CREATE TABLE IF NOT EXISTS `harmony_cooldown` (
   `metadata` text NOT NULL,
   PRIMARY KEY (`serial`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.harmony_cooldown: ~0 rows (aproximadamente)
 DELETE FROM `harmony_cooldown`;
@@ -818,7 +818,7 @@ CREATE TABLE IF NOT EXISTS `house_plants` (
   PRIMARY KEY (`id`),
   KEY `building` (`building`),
   KEY `plantid` (`plantid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7123 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.house_plants: ~0 rows (aproximadamente)
 DELETE FROM `house_plants`;
@@ -831,7 +831,7 @@ CREATE TABLE IF NOT EXISTS `house_rents` (
   `payed` int(11) NOT NULL DEFAULT 0,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.house_rents: ~0 rows (aproximadamente)
 DELETE FROM `house_rents`;
@@ -851,7 +851,7 @@ CREATE TABLE IF NOT EXISTS `instagram_accounts` (
   UNIQUE KEY `username` (`username`) USING BTREE,
   KEY `phone` (`phone`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.instagram_accounts: ~0 rows (aproximadamente)
 DELETE FROM `instagram_accounts`;
@@ -863,7 +863,7 @@ CREATE TABLE IF NOT EXISTS `instagram_follow` (
   `following` int(11) NOT NULL DEFAULT 0,
   `updatedDate` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.instagram_follow: ~0 rows (aproximadamente)
 DELETE FROM `instagram_follow`;
@@ -876,7 +876,7 @@ CREATE TABLE IF NOT EXISTS `instagram_messages` (
   `time` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` longtext NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.instagram_messages: ~0 rows (aproximadamente)
 DELETE FROM `instagram_messages`;
@@ -890,7 +890,7 @@ CREATE TABLE IF NOT EXISTS `instagram_notifications` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `content` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.instagram_notifications: ~0 rows (aproximadamente)
 DELETE FROM `instagram_notifications`;
@@ -908,7 +908,7 @@ CREATE TABLE IF NOT EXISTS `instagram_posts` (
   `filter` tinytext DEFAULT NULL,
   `commentCount` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=525 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=525 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.instagram_posts: ~0 rows (aproximadamente)
 DELETE FROM `instagram_posts`;
@@ -1017,7 +1017,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `can_heal` int(1) DEFAULT 0,
   `can_revive` int(1) DEFAULT 0,
   `actions_menu_enabled` int(1) DEFAULT 1,
-  `placeable_objects` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `placeable_objects` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
@@ -1046,14 +1046,14 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`, `enable_billing`, `can_rob`,
 CREATE TABLE IF NOT EXISTS `jobs_armories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `weapon` varchar(50) NOT NULL,
-  `components` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `components` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
   `ammo` int(10) unsigned NOT NULL,
   `tint` int(11) NOT NULL,
   `marker_id` int(11) NOT NULL,
   `identifier` varchar(80) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`,`marker_id`,`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.jobs_armories: ~0 rows (aproximadamente)
 DELETE FROM `jobs_armories`;
@@ -1065,9 +1065,9 @@ CREATE TABLE IF NOT EXISTS `jobs_data` (
   `type` varchar(50) NOT NULL,
   `coords` varchar(300) NOT NULL DEFAULT '',
   `grades_type` varchar(20) DEFAULT NULL,
-  `specific_grades` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `specific_grades` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
   `min_grade` smallint(6) DEFAULT NULL,
-  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `data` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
   `blip_id` int(11) DEFAULT NULL,
   `blip_color` int(11) DEFAULT 0,
   `blip_scale` float DEFAULT 1,
@@ -1085,7 +1085,7 @@ CREATE TABLE IF NOT EXISTS `jobs_data` (
   `object` varchar(50) DEFAULT NULL,
   `object_heading` float DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.jobs_data: ~0 rows (aproximadamente)
 DELETE FROM `jobs_data`;
@@ -1095,12 +1095,12 @@ CREATE TABLE IF NOT EXISTS `jobs_garages` (
   `vehicle_id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(100) NOT NULL,
   `marker_id` int(11) NOT NULL,
-  `vehicle` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
-  `vehicle_props` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `vehicle` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL DEFAULT '',
+  `vehicle_props` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `plate` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`vehicle_id`) USING BTREE,
   KEY `identifier` (`identifier`,`marker_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.jobs_garages: ~0 rows (aproximadamente)
 DELETE FROM `jobs_garages`;
@@ -1116,7 +1116,7 @@ CREATE TABLE IF NOT EXISTS `jobs_shops` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `marker_id` (`marker_id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.jobs_shops: ~0 rows (aproximadamente)
 DELETE FROM `jobs_shops`;
@@ -1126,10 +1126,10 @@ CREATE TABLE IF NOT EXISTS `jobs_wardrobes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(100) NOT NULL,
   `label` varchar(50) NOT NULL,
-  `outfit` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `outfit` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.jobs_wardrobes: ~0 rows (aproximadamente)
 DELETE FROM `jobs_wardrobes`;
@@ -1213,7 +1213,7 @@ CREATE TABLE IF NOT EXISTS `keep_bags_retrieval` (
   `claimed` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `characterId` (`characterId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.keep_bags_retrieval: ~0 rows (aproximadamente)
 DELETE FROM `keep_bags_retrieval`;
@@ -1228,7 +1228,7 @@ CREATE TABLE IF NOT EXISTS `lapraces` (
   `distance` int(11) DEFAULT NULL,
   `raceid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.lapraces: ~0 rows (aproximadamente)
 DELETE FROM `lapraces`;
@@ -1499,7 +1499,7 @@ CREATE TABLE IF NOT EXISTS `lunar_fishing` (
   `user_identifier` varchar(50) NOT NULL,
   `xp` float NOT NULL,
   PRIMARY KEY (`user_identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.lunar_fishing: ~0 rows (aproximadamente)
 DELETE FROM `lunar_fishing`;
@@ -1525,7 +1525,7 @@ CREATE TABLE IF NOT EXISTS `lunar_multijob` (
   `week` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`,`name`),
   KEY `idx_identifier` (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.lunar_multijob: ~0 rows (aproximadamente)
 DELETE FROM `lunar_multijob`;
@@ -1535,7 +1535,7 @@ CREATE TABLE IF NOT EXISTS `lunar_multijob_accounts` (
   `name` varchar(50) NOT NULL,
   `balance` int(11) NOT NULL,
   PRIMARY KEY (`name`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.lunar_multijob_accounts: ~0 rows (aproximadamente)
 DELETE FROM `lunar_multijob_accounts`;
@@ -1580,7 +1580,7 @@ CREATE TABLE IF NOT EXISTS `mail_accounts` (
   `password` varchar(50) DEFAULT '',
   `phone` varchar(50) DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.mail_accounts: ~0 rows (aproximadamente)
 DELETE FROM `mail_accounts`;
@@ -1597,7 +1597,7 @@ CREATE TABLE IF NOT EXISTS `market_accounts` (
   `password` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.market_accounts: ~0 rows (aproximadamente)
 DELETE FROM `market_accounts`;
@@ -1611,7 +1611,7 @@ CREATE TABLE IF NOT EXISTS `market_markets` (
   `ratings` text NOT NULL DEFAULT '[]',
   `coords` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.market_markets: ~8 rows (aproximadamente)
 DELETE FROM `market_markets`;
@@ -1634,7 +1634,7 @@ CREATE TABLE IF NOT EXISTS `market_messages` (
   `messages` text NOT NULL,
   `isMarket` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.market_messages: ~0 rows (aproximadamente)
 DELETE FROM `market_messages`;
@@ -1648,7 +1648,7 @@ CREATE TABLE IF NOT EXISTS `missions_creator_played_missions` (
   PRIMARY KEY (`identifier`,`template_id`) USING BTREE,
   KEY `fk_mc_played_missions_mc_templates` (`template_id`) USING BTREE,
   CONSTRAINT `fk_mc_played_missions_mc_templates` FOREIGN KEY (`template_id`) REFERENCES `missions_creator_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.missions_creator_played_missions: ~0 rows (aproximadamente)
 DELETE FROM `missions_creator_played_missions`;
@@ -1663,7 +1663,7 @@ CREATE TABLE IF NOT EXISTS `missions_creator_statistics` (
   PRIMARY KEY (`template_id`) USING BTREE,
   UNIQUE KEY `template_id` (`template_id`) USING BTREE,
   CONSTRAINT `fk_mc_statistics_mc_templates` FOREIGN KEY (`template_id`) REFERENCES `missions_creator_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Keeps track of the missions statistics (likes, dislikes, success/fail count)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci COMMENT='Keeps track of the missions statistics (likes, dislikes, success/fail count)';
 
 -- Volcando datos para la tabla newsite.missions_creator_statistics: ~0 rows (aproximadamente)
 DELETE FROM `missions_creator_statistics`;
@@ -1677,7 +1677,7 @@ CREATE TABLE IF NOT EXISTS `missions_creator_templates` (
   `stages` longtext NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.missions_creator_templates: ~0 rows (aproximadamente)
 DELETE FROM `missions_creator_templates`;
@@ -1711,7 +1711,7 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `trunk` longtext DEFAULT NULL,
   `job` varchar(20) NOT NULL DEFAULT 'civ',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 
 -- Volcando datos para la tabla newsite.owned_vehicles: ~0 rows (aproximadamente)
 DELETE FROM `owned_vehicles`;
@@ -1746,7 +1746,7 @@ CREATE TABLE IF NOT EXISTS `phone_app_store` (
   `ratings` text DEFAULT '[]',
   `downloads` int(11) DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_app_store: ~0 rows (aproximadamente)
 DELETE FROM `phone_app_store`;
@@ -1758,7 +1758,7 @@ CREATE TABLE IF NOT EXISTS `phone_backups` (
   `data` longtext NOT NULL,
   `owner` varchar(120) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.phone_backups: ~0 rows (aproximadamente)
 DELETE FROM `phone_backups`;
@@ -1774,7 +1774,7 @@ CREATE TABLE IF NOT EXISTS `phone_bills` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_bills: ~0 rows (aproximadamente)
 DELETE FROM `phone_bills`;
@@ -1784,7 +1784,7 @@ CREATE TABLE IF NOT EXISTS `phone_blocked_phones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uniqueId` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.phone_blocked_phones: ~0 rows (aproximadamente)
 DELETE FROM `phone_blocked_phones`;
@@ -1804,7 +1804,7 @@ CREATE TABLE IF NOT EXISTS `phone_chatrooms` (
   `created` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `room_code` (`room_code`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_chatrooms: ~3 rows (aproximadamente)
 DELETE FROM `phone_chatrooms`;
@@ -1834,7 +1834,7 @@ CREATE TABLE IF NOT EXISTS `phone_favorite_contacts` (
   `identifier` varchar(50) NOT NULL DEFAULT '0',
   `phone` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_favorite_contacts: ~0 rows (aproximadamente)
 DELETE FROM `phone_favorite_contacts`;
@@ -1851,7 +1851,7 @@ CREATE TABLE IF NOT EXISTS `phone_gallery` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `type` (`type`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_gallery: ~0 rows (aproximadamente)
 DELETE FROM `phone_gallery`;
@@ -1865,7 +1865,7 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   `created` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `unreaded` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_messages: ~0 rows (aproximadamente)
 DELETE FROM `phone_messages`;
@@ -1876,7 +1876,7 @@ CREATE TABLE IF NOT EXISTS `phone_metadata` (
   `metadata` longtext DEFAULT NULL,
   `phoneNumber` varchar(50) DEFAULT '',
   PRIMARY KEY (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.phone_metadata: ~1 rows (aproximadamente)
 DELETE FROM `phone_metadata`;
@@ -1892,7 +1892,7 @@ CREATE TABLE IF NOT EXISTS `phone_notifies` (
   `app_name` text DEFAULT NULL,
   `msg_time` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_notifies: ~1 rows (aproximadamente)
 DELETE FROM `phone_notifies`;
@@ -1905,7 +1905,7 @@ CREATE TABLE IF NOT EXISTS `phone_recipes` (
   `number` varchar(50) NOT NULL DEFAULT '',
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.phone_recipes: ~0 rows (aproximadamente)
 DELETE FROM `phone_recipes`;
@@ -1920,7 +1920,7 @@ CREATE TABLE IF NOT EXISTS `phone_yellowpages` (
   `price` int(11) DEFAULT 0,
   `created` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.phone_yellowpages: ~0 rows (aproximadamente)
 DELETE FROM `phone_yellowpages`;
@@ -1938,7 +1938,7 @@ CREATE TABLE IF NOT EXISTS `player_contacts` (
   `isBlocked` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.player_contacts: ~0 rows (aproximadamente)
 DELETE FROM `player_contacts`;
@@ -1957,7 +1957,7 @@ CREATE TABLE IF NOT EXISTS `player_garages` (
   `job` varchar(50) DEFAULT NULL,
   `gang` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.player_garages: ~0 rows (aproximadamente)
 DELETE FROM `player_garages`;
@@ -1988,7 +1988,7 @@ CREATE TABLE IF NOT EXISTS `player_houses` (
   KEY `house` (`house`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE,
   KEY `citizenid` (`citizenid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.player_houses: ~0 rows (aproximadamente)
 DELETE FROM `player_houses`;
@@ -2007,7 +2007,7 @@ CREATE TABLE IF NOT EXISTS `player_mails` (
   `medias` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `identifier` (`taker`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.player_mails: ~0 rows (aproximadamente)
 DELETE FROM `player_mails`;
@@ -2023,7 +2023,7 @@ CREATE TABLE IF NOT EXISTS `player_outfits` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `citizenid_outfitname_model` (`citizenid`,`outfitname`,`model`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.player_outfits: ~0 rows (aproximadamente)
 DELETE FROM `player_outfits`;
@@ -2035,7 +2035,7 @@ CREATE TABLE IF NOT EXISTS `player_outfit_codes` (
   `code` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `FK_player_outfit_codes_player_outfits` (`outfitid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.player_outfit_codes: ~0 rows (aproximadamente)
 DELETE FROM `player_outfit_codes`;
@@ -2143,15 +2143,15 @@ DELETE FROM `rcore_gunrange_leaderboard`;
 -- Volcando estructura para tabla newsite.rcore_prison
 CREATE TABLE IF NOT EXISTS `rcore_prison` (
   `prisoner_id` int(11) NOT NULL AUTO_INCREMENT,
-  `owner` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `owner` varchar(80) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `solitary_time` datetime DEFAULT NULL,
   `jail_time` datetime DEFAULT NULL,
-  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `data` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `createdAt` timestamp NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`prisoner_id`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison: ~0 rows (aproximadamente)
 DELETE FROM `rcore_prison`;
@@ -2159,14 +2159,14 @@ DELETE FROM `rcore_prison`;
 -- Volcando estructura para tabla newsite.rcore_prison_accounts
 CREATE TABLE IF NOT EXISTS `rcore_prison_accounts` (
   `account_id` int(11) NOT NULL AUTO_INCREMENT,
-  `owner` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `owner` varchar(80) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `balance` bigint(20) DEFAULT 0,
   `giftstate` tinyint(4) DEFAULT 0,
   `createdAt` timestamp NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`account_id`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_accounts: ~0 rows (aproximadamente)
 DELETE FROM `rcore_prison_accounts`;
@@ -2174,13 +2174,13 @@ DELETE FROM `rcore_prison_accounts`;
 -- Volcando estructura para tabla newsite.rcore_prison_accounts_log
 CREATE TABLE IF NOT EXISTS `rcore_prison_accounts_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `action` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `desc` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `charId` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `action` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `desc` varchar(300) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `charId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `amount` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_accounts_log: ~0 rows (aproximadamente)
 DELETE FROM `rcore_prison_accounts_log`;
@@ -2188,18 +2188,18 @@ DELETE FROM `rcore_prison_accounts_log`;
 -- Volcando estructura para tabla newsite.rcore_prison_coms
 CREATE TABLE IF NOT EXISTS `rcore_prison_coms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `owner` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `owner` varchar(80) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `zoneId` bigint(10) DEFAULT NULL,
-  `state` enum('IDLE','SWEEPING','RETURN') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` enum('IDLE','SWEEPING','RETURN') CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `perollAmount` int(10) DEFAULT 0,
   `perollTarget` int(10) DEFAULT 0,
   `createdAt` timestamp NULL DEFAULT current_timestamp(),
-  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(60) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE,
   KEY `zoneId` (`zoneId`) USING BTREE,
   CONSTRAINT `FK_Q27L` FOREIGN KEY (`zoneId`) REFERENCES `rcore_prison_coms_sessions` (`zoneId`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_coms: ~0 rows (aproximadamente)
 DELETE FROM `rcore_prison_coms`;
@@ -2211,7 +2211,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_coms_sessions` (
   `verticesDone` bigint(10) NOT NULL DEFAULT 0,
   PRIMARY KEY (`zoneId`),
   KEY `zoneId_index` (`zoneId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_coms_sessions: ~0 rows (aproximadamente)
 DELETE FROM `rcore_prison_coms_sessions`;
@@ -2219,14 +2219,14 @@ DELETE FROM `rcore_prison_coms_sessions`;
 -- Volcando estructura para tabla newsite.rcore_prison_logs
 CREATE TABLE IF NOT EXISTS `rcore_prison_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `action` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `desc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `charId` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `officer_name` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `citizen_name` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `action` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `desc` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `charId` varchar(70) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `officer_name` varchar(70) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `citizen_name` varchar(70) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_logs: ~0 rows (aproximadamente)
 DELETE FROM `rcore_prison_logs`;
@@ -2234,9 +2234,9 @@ DELETE FROM `rcore_prison_logs`;
 -- Volcando estructura para tabla newsite.rcore_prison_stash
 CREATE TABLE IF NOT EXISTS `rcore_prison_stash` (
   `owner` varchar(255) NOT NULL,
-  `stash` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stash` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`owner`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_stash: ~0 rows (aproximadamente)
 DELETE FROM `rcore_prison_stash`;
@@ -2257,7 +2257,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports` (
   `chat_room` text NOT NULL,
   `logger` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_reports: ~0 rows (aproximadamente)
 DELETE FROM `rcore_reports`;
@@ -2270,7 +2270,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports_admin_chat` (
   `message` text NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_reports_admin_chat: ~0 rows (aproximadamente)
 DELETE FROM `rcore_reports_admin_chat`;
@@ -2280,7 +2280,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports_tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tag` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_reports_tags: ~0 rows (aproximadamente)
 DELETE FROM `rcore_reports_tags`;
@@ -2347,11 +2347,11 @@ DELETE FROM `rivalries`;
 CREATE TABLE IF NOT EXISTS `robberies_creator_cargo_robberies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(50) NOT NULL,
-  `blip_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `blip_data` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `data` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.robberies_creator_cargo_robberies: ~0 rows (aproximadamente)
 DELETE FROM `robberies_creator_cargo_robberies`;
@@ -2364,9 +2364,9 @@ CREATE TABLE IF NOT EXISTS `robberies_creator_heists` (
   `timeout_minutes` int(11) NOT NULL DEFAULT 120,
   `minutes_before_reset` int(11) NOT NULL DEFAULT 60,
   `time_limit_minutes` int(11) NOT NULL DEFAULT 0,
-  `stages` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `stages` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.robberies_creator_heists: ~0 rows (aproximadamente)
 DELETE FROM `robberies_creator_heists`;
@@ -2375,14 +2375,14 @@ DELETE FROM `robberies_creator_heists`;
 CREATE TABLE IF NOT EXISTS `robberies_creator_plannings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(50) NOT NULL,
-  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `data` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `cargo_robbery_id` int(11) DEFAULT NULL,
   `minimum_police` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE,
   KEY `cargo_robbery_id` (`cargo_robbery_id`) USING BTREE,
   CONSTRAINT `cargo_robbery_id` FOREIGN KEY (`cargo_robbery_id`) REFERENCES `robberies_creator_cargo_robberies` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.robberies_creator_plannings: ~0 rows (aproximadamente)
 DELETE FROM `robberies_creator_plannings`;
@@ -2445,7 +2445,7 @@ CREATE TABLE IF NOT EXISTS `tiktok_users` (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username` (`username`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.tiktok_users: ~0 rows (aproximadamente)
 DELETE FROM `tiktok_users`;
@@ -2457,7 +2457,7 @@ CREATE TABLE IF NOT EXISTS `tiktok_videos` (
   `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `data` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.tiktok_videos: ~0 rows (aproximadamente)
 DELETE FROM `tiktok_videos`;
@@ -2475,7 +2475,7 @@ CREATE TABLE IF NOT EXISTS `tinder_accounts` (
   `gender` varchar(10) DEFAULT NULL,
   `interested` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.tinder_accounts: ~0 rows (aproximadamente)
 DELETE FROM `tinder_accounts`;
@@ -2489,7 +2489,7 @@ CREATE TABLE IF NOT EXISTS `tinder_messages` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.tinder_messages: ~0 rows (aproximadamente)
 DELETE FROM `tinder_messages`;
@@ -2501,7 +2501,7 @@ CREATE TABLE IF NOT EXISTS `tinder_swipers` (
   `targetId` int(11) NOT NULL DEFAULT 0,
   `liked` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.tinder_swipers: ~0 rows (aproximadamente)
 DELETE FROM `tinder_swipers`;
@@ -2535,7 +2535,7 @@ CREATE TABLE IF NOT EXISTS `twitter_accounts` (
   `background` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.twitter_accounts: ~0 rows (aproximadamente)
 DELETE FROM `twitter_accounts`;
@@ -2547,7 +2547,7 @@ CREATE TABLE IF NOT EXISTS `twitter_follow` (
   `following` int(11) DEFAULT NULL,
   `updatedDate` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.twitter_follow: ~0 rows (aproximadamente)
 DELETE FROM `twitter_follow`;
@@ -2560,7 +2560,7 @@ CREATE TABLE IF NOT EXISTS `twitter_messages` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` text NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.twitter_messages: ~0 rows (aproximadamente)
 DELETE FROM `twitter_messages`;
@@ -2574,7 +2574,7 @@ CREATE TABLE IF NOT EXISTS `twitter_notifications` (
   `tweetId` int(11) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.twitter_notifications: ~0 rows (aproximadamente)
 DELETE FROM `twitter_notifications`;
@@ -2586,7 +2586,7 @@ CREATE TABLE IF NOT EXISTS `twitter_retweets` (
   `tweetId` int(11) NOT NULL DEFAULT 0,
   `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.twitter_retweets: ~0 rows (aproximadamente)
 DELETE FROM `twitter_retweets`;
@@ -2603,7 +2603,7 @@ CREATE TABLE IF NOT EXISTS `twitter_tweets` (
   `comments` text DEFAULT '[]',
   `retweets` text DEFAULT '[]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.twitter_tweets: ~0 rows (aproximadamente)
 DELETE FROM `twitter_tweets`;
@@ -2619,7 +2619,7 @@ CREATE TABLE IF NOT EXISTS `uber_rider_last_transactions` (
   `price` int(11) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.uber_rider_last_transactions: ~0 rows (aproximadamente)
 DELETE FROM `uber_rider_last_transactions`;
@@ -2659,7 +2659,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `crypto_wallet` int(11) DEFAULT 0,
   `inside` varchar(50) DEFAULT '',
   `phone_number` varchar(25) DEFAULT NULL,
-  `ganginfo` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`ganginfo`)),
+  `ganginfo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL CHECK (json_valid(`ganginfo`)),
   `blood_type` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`identifier`),
   UNIQUE KEY `id` (`id`)
@@ -3298,7 +3298,7 @@ CREATE TABLE IF NOT EXISTS `wasabi_adminmenu_bans` (
   `BannedReason` varchar(100) DEFAULT NULL,
   `BannedTime` varchar(10) DEFAULT NULL,
   `Time` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.wasabi_adminmenu_bans: ~0 rows (aproximadamente)
 DELETE FROM `wasabi_adminmenu_bans`;
@@ -3342,7 +3342,7 @@ CREATE TABLE IF NOT EXISTS `weazel` (
   `image` text DEFAULT NULL,
   `created` varchar(50) DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 -- Volcando datos para la tabla newsite.weazel: ~0 rows (aproximadamente)
 DELETE FROM `weazel`;
@@ -3358,7 +3358,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_accounts` (
   `created` timestamp NULL DEFAULT current_timestamp(),
   `hide_receipts` int(11) DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whatsapp_accounts: ~0 rows (aproximadamente)
 DELETE FROM `whatsapp_accounts`;
@@ -3370,7 +3370,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_call_history` (
   `calledId` int(11) DEFAULT NULL,
   `time` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whatsapp_call_history: ~0 rows (aproximadamente)
 DELETE FROM `whatsapp_call_history`;
@@ -3381,7 +3381,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_call_history_users` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `callId` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whatsapp_call_history_users: ~0 rows (aproximadamente)
 DELETE FROM `whatsapp_call_history_users`;
@@ -3396,7 +3396,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_chats` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whatsapp_chats: ~0 rows (aproximadamente)
 DELETE FROM `whatsapp_chats`;
@@ -3407,7 +3407,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_group_admins` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `groupId` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whatsapp_group_admins: ~0 rows (aproximadamente)
 DELETE FROM `whatsapp_group_admins`;
@@ -3418,7 +3418,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_group_members` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `groupId` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whatsapp_group_members: ~0 rows (aproximadamente)
 DELETE FROM `whatsapp_group_members`;
@@ -3428,7 +3428,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_status` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `data` text DEFAULT NULL,
   PRIMARY KEY (`userId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whatsapp_status: ~0 rows (aproximadamente)
 DELETE FROM `whatsapp_status`;
@@ -3447,7 +3447,7 @@ CREATE TABLE IF NOT EXISTS `wsb_cctvcameras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.wsb_cctvcameras: ~0 rows (aproximadamente)
 DELETE FROM `wsb_cctvcameras`;
@@ -3457,7 +3457,7 @@ CREATE TABLE IF NOT EXISTS `wsb_speedtraps` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.wsb_speedtraps: ~0 rows (aproximadamente)
 DELETE FROM `wsb_speedtraps`;
