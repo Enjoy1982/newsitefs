@@ -14,6 +14,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Volcando estructura de base de datos para newsite
+CREATE DATABASE IF NOT EXISTS `newsite` /*!40100 DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci */;
+USE `newsite`;
+
 -- Volcando estructura para tabla newsite.addon_account
 CREATE TABLE IF NOT EXISTS `addon_account` (
   `name` varchar(60) NOT NULL,
@@ -139,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `banking` (
   `balance` int(11) DEFAULT 0,
   `label` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.banking: ~0 rows (aproximadamente)
 
@@ -188,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `boombox_songs` (
   `identifier` varchar(64) NOT NULL,
   `label` varchar(30) NOT NULL,
   `link` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.boombox_songs: ~0 rows (aproximadamente)
 
@@ -269,9 +274,9 @@ CREATE TABLE IF NOT EXISTS `crypto` (
   `worth` int(11) NOT NULL DEFAULT 0,
   `history` text DEFAULT NULL,
   PRIMARY KEY (`crypto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
--- Volcando datos para la tabla newsite.crypto: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.crypto: ~1 rows (aproximadamente)
 INSERT INTO `crypto` (`crypto`, `worth`, `history`) VALUES
 	('btc', 1021, '[{"PreviousWorth":1011,"NewWorth":1011},{"PreviousWorth":1011,"NewWorth":1011},{"PreviousWorth":1011,"NewWorth":1011},{"NewWorth":1021,"PreviousWorth":1011}]');
 
@@ -308,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `darkchat_messages` (
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.darkchat_messages: ~0 rows (aproximadamente)
 
@@ -571,7 +576,7 @@ CREATE TABLE IF NOT EXISTS `drunk_stats` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Volcando datos para la tabla newsite.drunk_stats: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.drunk_stats: ~1 rows (aproximadamente)
 INSERT INTO `drunk_stats` (`identifier`, `drunk_level`, `headache_level`, `toughness`) VALUES
 	('char1:8aea1ea045b56ecd98d63f338874d06d36bcabdf', 0, 0, 2);
 
@@ -712,7 +717,7 @@ CREATE TABLE IF NOT EXISTS `harmony_cooldown` (
   `metadata` text NOT NULL,
   PRIMARY KEY (`serial`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.harmony_cooldown: ~0 rows (aproximadamente)
 
@@ -790,7 +795,7 @@ CREATE TABLE IF NOT EXISTS `house_plants` (
   PRIMARY KEY (`id`),
   KEY `building` (`building`),
   KEY `plantid` (`plantid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.house_plants: ~0 rows (aproximadamente)
 
@@ -912,7 +917,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Volcando datos para la tabla newsite.items: ~33 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.items: ~35 rows (aproximadamente)
 INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('alive_chicken', 'Living chicken', 1, 0, 1),
 	('bandage', 'Bandage', 2, 0, 1),
@@ -1167,7 +1172,7 @@ CREATE TABLE IF NOT EXISTS `keep_bags_retrieval` (
   `claimed` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `characterId` (`characterId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.keep_bags_retrieval: ~0 rows (aproximadamente)
 
@@ -1181,7 +1186,7 @@ CREATE TABLE IF NOT EXISTS `lapraces` (
   `distance` int(11) DEFAULT NULL,
   `raceid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.lapraces: ~0 rows (aproximadamente)
 
@@ -1279,7 +1284,7 @@ CREATE TABLE IF NOT EXISTS `lation_meth_players` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Volcando datos para la tabla newsite.lation_meth_players: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.lation_meth_players: ~1 rows (aproximadamente)
 INSERT INTO `lation_meth_players` (`identifier`, `ammonia`, `iodine`, `acetone`, `inside`, `level`, `exp`, `total_produced`, `total_supply_runs`) VALUES
 	('char1:8aea1ea045b56ecd98d63f338874d06d36bcabdf', 35, 15, 23, 0, 1, 0, 0, 0);
 
@@ -1350,7 +1355,7 @@ CREATE TABLE IF NOT EXISTS `lation_selling` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Volcando datos para la tabla newsite.lation_selling: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.lation_selling: ~1 rows (aproximadamente)
 INSERT INTO `lation_selling` (`identifier`, `level`, `rep`, `total_sales`, `total_earned`) VALUES
 	('char1:8aea1ea045b56ecd98d63f338874d06d36bcabdf', 1, 0, 0, 0);
 
@@ -1789,7 +1794,7 @@ CREATE TABLE IF NOT EXISTS `phone_metadata` (
   PRIMARY KEY (`identifier`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla newsite.phone_metadata: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.phone_metadata: ~1 rows (aproximadamente)
 INSERT INTO `phone_metadata` (`identifier`, `metadata`, `phoneNumber`) VALUES
 	('char1:8aea1ea045b56ecd98d63f338874d06d36bcabdf', '{"metadata":{"battery":99.97699999999989,"faceid":true,"blur_disabled":true,"lockscreen":true,"apps":[{"label":"Phone","hideInSettingsNotifications":true,"blockedJobs":[],"slot":"0:0","image":"img/apps/phone.png","category":"Social","notificationSound":"","job":false,"app":"phone"},{"label":"Messages","job":false,"blockedJobs":[],"app":"messages","category":"Social","image":"img/apps/messages.png","slot":"0:1"},{"job":false,"slot":"0:2","blockedJobs":[],"app":"settings","label":"Settings","category":"Utilities","image":"img/apps/settings.png","blockBadge":true},{"label":"Camera","job":false,"blockedJobs":[],"app":"camera","category":"Creativity","image":"img/apps/camera.png","slot":"0:3"},{"label":"Contacts","job":false,"blockedJobs":[],"app":"contacts","category":"Social","image":"img/apps/contacts.png","slot":"1:0"},{"label":"Mail","job":false,"blockedJobs":[],"app":"mail","category":"Productivity & Finance","image":"img/apps/mail.png","slot":"1:1"},{"label":"Weather","job":false,"blockedJobs":[],"app":"weather","category":"Information & Reading","image":"img/apps/weather.png","slot":"1:2"},{"label":"Calendar","job":false,"blockedJobs":[],"app":"calendar","category":"Productivity & Finance","image":"img/apps/calendar.png","slot":"1:3"},{"label":"Reminders","job":false,"blockedJobs":[],"app":"reminder","category":"Productivity & Finance","image":"img/apps/reminders.png","slot":"1:4"},{"label":"Gallery","job":false,"blockedJobs":[],"app":"gallery","category":"Creativity","image":"img/apps/gallery.png","slot":"1:5"},{"label":"Health","job":false,"blockedJobs":[],"app":"health","category":"Creativity","image":"img/apps/health.png","slot":"1:6"},{"job":false,"slot":"1:7","blockedJobs":[],"app":"notes","hideInSettingsNotifications":true,"category":"Productivity & Finance","image":"img/apps/notes.png","label":"Notes"},{"job":false,"slot":"1:8","blockedJobs":[],"app":"calculator","hideInSettingsNotifications":true,"category":"Utilities","image":"img/apps/calculator.png","label":"Calculator"},{"label":"App Store","job":false,"blockedJobs":[],"app":"store","category":"Utilities","image":"img/apps/store.png","slot":"1:9"},{"label":"Stock","job":false,"blockedJobs":[],"app":"crypto","category":"Productivity & Finance","image":"img/apps/stock.png","slot":"1:10"},{"label":"Clock","job":false,"blockedJobs":[],"app":"clock","category":"Utilities","image":"img/apps/clock.png","slot":"1:11"},{"label":"Home","job":false,"blockedJobs":[],"app":"houses","category":"Utilities","image":"img/apps/houses.png","slot":"1:12"},{"label":"News","job":false,"blockedJobs":[],"app":"weazel","category":"Other","image":"img/apps/news.png","slot":"1:13"},{"app":"map","label":"Maps","blockedJobs":[],"category":"Utilities","image":"img/apps/maps.png","slot":"1:14"},{"label":"Safari","game":{"css":{"border":"none","top":"0","height":"100%","position":"absolute","width":"100%"},"name":"safari","rotate":false,"iframe":"https://yep.com"},"blockedJobs":[],"app":"safari","category":"Utilities","image":"img/apps/safari.png","slot":"1:15"},{"label":"FaceTime","job":false,"blockedJobs":[],"app":"facetime","category":"Social","image":"img/apps/facetime.png","slot":"1:16"}],"steps":0,"Pincode":"1111","first_screen_showed":true},"charinfo":{"firstname":"Yuri","phone":"376507729","lastname":"Orlov"},"uniqueId":810912545,"owneridentifier":"char1:8aea1ea045b56ecd98d63f338874d06d36bcabdf","phoneNumber":"376507729"}', '376507729');
 
@@ -1804,7 +1809,7 @@ CREATE TABLE IF NOT EXISTS `phone_notifies` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla newsite.phone_notifies: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.phone_notifies: ~1 rows (aproximadamente)
 INSERT INTO `phone_notifies` (`id`, `phone`, `msg_content`, `msg_head`, `app_name`, `msg_time`) VALUES
 	(1, '376507729', 'La contraseña fue cambiada exitosamente', 'Ajustes', 'settings', '2025-02-22 20:13:37');
 
@@ -1926,7 +1931,7 @@ CREATE TABLE IF NOT EXISTS `player_outfits` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `citizenid_outfitname_model` (`citizenid`,`outfitname`,`model`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.player_outfits: ~0 rows (aproximadamente)
 
@@ -2045,7 +2050,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison` (
   `updatedAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`prisoner_id`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison: ~0 rows (aproximadamente)
 
@@ -2059,7 +2064,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_accounts` (
   `updatedAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`account_id`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_accounts: ~0 rows (aproximadamente)
 
@@ -2072,7 +2077,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_accounts_log` (
   `amount` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_accounts_log: ~0 rows (aproximadamente)
 
@@ -2090,7 +2095,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_coms` (
   KEY `owner` (`owner`) USING BTREE,
   KEY `zoneId` (`zoneId`) USING BTREE,
   CONSTRAINT `FK_Q27L` FOREIGN KEY (`zoneId`) REFERENCES `rcore_prison_coms_sessions` (`zoneId`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_coms: ~0 rows (aproximadamente)
 
@@ -2101,7 +2106,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_coms_sessions` (
   `verticesDone` bigint(10) NOT NULL DEFAULT 0,
   PRIMARY KEY (`zoneId`),
   KEY `zoneId_index` (`zoneId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_coms_sessions: ~0 rows (aproximadamente)
 
@@ -2115,7 +2120,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_logs` (
   `citizen_name` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_logs: ~0 rows (aproximadamente)
 
@@ -2124,7 +2129,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_stash` (
   `owner` varchar(255) NOT NULL,
   `stash` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`owner`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_prison_stash: ~0 rows (aproximadamente)
 
@@ -2144,7 +2149,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports` (
   `chat_room` text NOT NULL,
   `logger` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_reports: ~0 rows (aproximadamente)
 
@@ -2156,7 +2161,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports_admin_chat` (
   `message` text NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_reports_admin_chat: ~0 rows (aproximadamente)
 
@@ -2165,7 +2170,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports_tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tag` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.rcore_reports_tags: ~0 rows (aproximadamente)
 
@@ -2527,7 +2532,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Volcando datos para la tabla newsite.users: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.users: ~1 rows (aproximadamente)
 INSERT INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `gang`, `gang_grade`, `loadout`, `metadata`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`, `deaths`, `ishandcuffed`, `injail`, `id`, `disabled`, `last_property`, `created_at`, `last_seen`, `pincode`, `shell_garage`, `cryptocurrency`, `crypto_wallet`, `inside`, `phone_number`, `ganginfo`, `blood_type`) VALUES
 	('char1:8aea1ea045b56ecd98d63f338874d06d36bcabdf', '{"black_money":0,"bank":57800,"money":9652}', 'admin', '[{"slot":1,"name":"bread","count":3},{"slot":2,"name":"jacket4","count":1},{"metadata":{"registered":"Yuri Orlov","serial":"363143FPQ230957","ammo":12,"durability":100,"components":[]},"slot":3,"name":"WEAPON_PISTOL","count":1},{"slot":4,"name":"ammo-9","count":88},{"slot":5,"name":"burger","count":8},{"slot":6,"name":"shoes5","count":1},{"slot":7,"name":"jacket1","count":1},{"metadata":{"image":"trash_can","weight":20,"description":"An empty soda can."},"slot":8,"name":"garbage","count":3},{"slot":9,"name":"burger","count":1},{"slot":10,"name":"money","count":9652},{"slot":11,"name":"ls_empty_baggy","count":5},{"slot":12,"name":"trousers5","count":1}]', 'unemployed', 0, 'none', 0, '[]', '{"armor":0,"health":200,"jobDuty":false,"lastPlaytime":17201}', '{"z":23.095947265625,"heading":104.88188934326172,"x":-551.4461669921875,"y":-1007.7494506835938}', 'Yuri', 'Orlov', '11/11/2000', 'm', 180, '{"headOverlays":{"lipstick":{"secondColor":0,"style":0,"opacity":0,"color":0},"sunDamage":{"secondColor":0,"style":0,"opacity":0,"color":0},"blush":{"secondColor":0,"style":0,"opacity":0,"color":0},"beard":{"secondColor":0,"style":0,"opacity":0,"color":0},"moleAndFreckles":{"secondColor":0,"style":0,"opacity":0,"color":0},"blemishes":{"secondColor":0,"style":0,"opacity":0,"color":0},"bodyBlemishes":{"secondColor":0,"style":0,"opacity":0,"color":0},"eyebrows":{"secondColor":0,"style":0,"opacity":0,"color":0},"chestHair":{"secondColor":0,"style":0,"opacity":0,"color":0},"makeUp":{"secondColor":0,"style":0,"opacity":0,"color":0},"ageing":{"secondColor":0,"style":0,"opacity":0,"color":0},"complexion":{"secondColor":0,"style":0,"opacity":0,"color":0}},"props":[{"texture":-1,"prop_id":0,"drawable":-1},{"texture":-1,"prop_id":1,"drawable":-1},{"texture":-1,"prop_id":2,"drawable":-1},{"texture":-1,"prop_id":6,"drawable":-1},{"texture":-1,"prop_id":7,"drawable":-1}],"hair":{"texture":0,"style":0,"highlight":0,"color":0},"eyeColor":0,"faceFeatures":{"noseBoneTwist":0,"nosePeakHigh":0,"chinBoneSize":0,"jawBoneWidth":0,"noseBoneHigh":0,"cheeksWidth":0,"chinHole":0,"nosePeakSize":0,"noseWidth":0,"cheeksBoneWidth":0,"lipsThickness":0,"eyesOpening":0,"nosePeakLowering":0,"neckThickness":0,"jawBoneBackSize":0,"chinBoneLowering":0,"eyeBrownHigh":0,"eyeBrownForward":0,"chinBoneLenght":0,"cheeksBoneHigh":0},"model":"mp_m_freemode_01","headBlend":{"skinSecond":0,"skinThird":0,"skinFirst":0,"thirdMix":0,"shapeMix":0,"skinMix":0,"shapeFirst":0,"shapeThird":0,"shapeSecond":0},"tattoos":[],"components":[{"texture":0,"component_id":0,"drawable":0},{"texture":0,"component_id":1,"drawable":0},{"texture":0,"component_id":2,"drawable":0},{"texture":0,"component_id":3,"drawable":0},{"texture":0,"component_id":4,"drawable":0},{"texture":0,"component_id":5,"drawable":0},{"texture":0,"component_id":6,"drawable":0},{"texture":0,"component_id":7,"drawable":0},{"texture":0,"component_id":8,"drawable":0},{"texture":0,"component_id":9,"drawable":0},{"texture":0,"component_id":10,"drawable":0},{"texture":0,"component_id":11,"drawable":0}]}', '[{"name":"drunk","percent":0.0,"val":0},{"name":"hunger","percent":49.89,"val":498900},{"name":"thirst","percent":49.9175,"val":499175}]', 0, 0, 0, 0, 5, 0, NULL, '2025-02-23 03:10:24', '2025-02-24 22:38:27', NULL, '', '', 0, '', NULL, NULL, 'B+');
 
@@ -3152,7 +3157,7 @@ CREATE TABLE IF NOT EXISTS `wasabi_adminmenu_bans` (
   `BannedReason` varchar(100) DEFAULT NULL,
   `BannedTime` varchar(10) DEFAULT NULL,
   `Time` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.wasabi_adminmenu_bans: ~0 rows (aproximadamente)
 
@@ -3288,7 +3293,7 @@ CREATE TABLE IF NOT EXISTS `wsb_cctvcameras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.wsb_cctvcameras: ~0 rows (aproximadamente)
 
@@ -3297,7 +3302,7 @@ CREATE TABLE IF NOT EXISTS `wsb_speedtraps` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.wsb_speedtraps: ~0 rows (aproximadamente)
 
@@ -3308,7 +3313,7 @@ CREATE TABLE IF NOT EXISTS `zsx_multicharacter_slots` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
 
--- Volcando datos para la tabla newsite.zsx_multicharacter_slots: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla newsite.zsx_multicharacter_slots: ~1 rows (aproximadamente)
 INSERT INTO `zsx_multicharacter_slots` (`identifier`, `amount`) VALUES
 	('license:8aea1ea045b56ecd98d63f338874d06d36bcabdf', 1);
 
