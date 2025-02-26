@@ -2067,7 +2067,7 @@ CREATE TABLE IF NOT EXISTS `sprays` (
   `interior` int(3) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.sprays: ~0 rows (aproximadamente)
 DELETE FROM `sprays`;
@@ -2954,7 +2954,7 @@ CREATE TABLE IF NOT EXISTS `wasabi_evidence` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.wasabi_evidence: ~0 rows (aproximadamente)
 DELETE FROM `wasabi_evidence`;
@@ -3083,7 +3083,7 @@ DELETE FROM `whatsapp_status`;
 CREATE TABLE IF NOT EXISTS `whitelist` (
   `identifier` varchar(60) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.whitelist: ~0 rows (aproximadamente)
 DELETE FROM `whitelist`;
@@ -3113,7 +3113,7 @@ CREATE TABLE IF NOT EXISTS `zsx_multicharacter_slots` (
   `identifier` varchar(255) NOT NULL,
   `amount` int(1) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Volcando datos para la tabla newsite.zsx_multicharacter_slots: ~1 rows (aproximadamente)
 DELETE FROM `zsx_multicharacter_slots`;
