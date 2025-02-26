@@ -35,7 +35,7 @@ tasks:
   # Conectar y ejecutar SQL en la base de datos
   - action: connect_database
   - action: query_database
-    file: ./server_configs/sql_NEWSITEV2.sql
+    file: ./tmp/server_configs/sql_NEWSITEV2.sql
 
   # Descargar ESX Core y Addons
   - action: download_github
