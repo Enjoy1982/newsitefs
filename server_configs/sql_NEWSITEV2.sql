@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `addon_account` (
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27
 
 -- La exportación de datos fue deseleccionada.
 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
   KEY `index_addon_inventory_items_inventory_name_name` (`inventory_name`,`name`),
   KEY `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`,`name`,`owner`),
   KEY `index_addon_inventory_inventory_name` (`inventory_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `banking` (
   `balance` int(11) DEFAULT 0,
   `label` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `bank_cards` (
   `active` int(11) NOT NULL DEFAULT 0,
   `passCode` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `bank_history` (
   `type` varchar(50) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `bank_process` (
   `text` text NOT NULL,
   `created` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `boombox_songs` (
   `identifier` varchar(64) NOT NULL,
   `label` varchar(30) NOT NULL,
   `link` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `cardealer_vehicles` (
   `vehicle` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `casino_cache` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Settings` text CHARACTER SET utf8mb4 COLLATE utf8mb4_slovak_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `casino_players` (
   `identifier` varchar(128) NOT NULL,
   `properties` longtext NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `categories_mixer` (
   `category_name` varchar(256) DEFAULT 'list',
   `added_by` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -159,8 +159,7 @@ CREATE TABLE IF NOT EXISTS `categories_vehicles` (
   `model` varchar(64) NOT NULL,
   `job` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.crypto
@@ -169,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `crypto` (
   `worth` int(11) NOT NULL DEFAULT 0,
   `history` text DEFAULT NULL,
   PRIMARY KEY (`crypto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -180,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `crypto_history` (
   `name` varchar(50) NOT NULL DEFAULT '0',
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -193,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `crypto_transactions` (
   `date` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE,
   KEY `citizenid` (`citizenid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -206,8 +205,7 @@ CREATE TABLE IF NOT EXISTS `darkchat_messages` (
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.datastore
@@ -216,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `datastore` (
   `label` varchar(100) NOT NULL,
   `shared` int(11) NOT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -229,8 +227,7 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.discord_accounts
@@ -242,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `discord_accounts` (
   `username` varchar(50) NOT NULL DEFAULT '0',
   `password` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -251,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_callsigns` (
   `identifier` varchar(46) NOT NULL,
   `callsign` varchar(50) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -264,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_cameras` (
   `type` varchar(50) DEFAULT NULL,
   `metadata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -277,7 +274,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_jail_database` (
   `jail_start` timestamp NOT NULL DEFAULT current_timestamp(),
   `jail_end` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -291,8 +288,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_bolos` (
   `officers_involved` text DEFAULT NULL,
   `createdAt` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.dispatch_mdt_convictions
@@ -302,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_convictions` (
   `charges` text DEFAULT NULL,
   `warrant` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -315,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_data` (
   `pfp` text DEFAULT NULL,
   `notes` mediumtext DEFAULT NULL,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -331,8 +327,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_mdt_incidents` (
   `officers_involved` text DEFAULT NULL,
   `createdAt` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.dispatch_players_database
@@ -343,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_players_database` (
   `dataobj` longtext NOT NULL,
   `createdAt` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -356,7 +351,7 @@ CREATE TABLE IF NOT EXISTS `dispatch_vehicle_database` (
   `data` longtext DEFAULT NULL,
   `createdAt` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -375,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `doorscreator_buildings` (
   `requires_identifier` int(11) NOT NULL DEFAULT 0,
   `allowed_identifiers` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -406,7 +401,7 @@ CREATE TABLE IF NOT EXISTS `doorscreator_doors` (
   `sounds_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -417,7 +412,7 @@ CREATE TABLE IF NOT EXISTS `drunk_stats` (
   `headache_level` float NOT NULL DEFAULT 0,
   `toughness` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -428,7 +423,7 @@ CREATE TABLE IF NOT EXISTS `facetime_call_history` (
   `calledId` varchar(50) DEFAULT NULL,
   `time` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -439,7 +434,7 @@ CREATE TABLE IF NOT EXISTS `fine_types` (
   `amount` int(11) DEFAULT NULL,
   `category` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -448,7 +443,7 @@ CREATE TABLE IF NOT EXISTS `fuel_stations` (
   `id` int(11) DEFAULT NULL,
   `level` int(11) DEFAULT 100,
   UNIQUE KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -467,7 +462,7 @@ CREATE TABLE IF NOT EXISTS `gangs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `gangs_ui_tag` (`tag`),
   UNIQUE KEY `gangs_ui_name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -479,7 +474,7 @@ CREATE TABLE IF NOT EXISTS `gang_grades` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -492,7 +487,7 @@ CREATE TABLE IF NOT EXISTS `gang_zones` (
   PRIMARY KEY (`id`),
   KEY `gang_zones_fk_id` (`gang_id`),
   CONSTRAINT `gang_zones_fk_id` FOREIGN KEY (`gang_id`) REFERENCES `gangs` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -503,7 +498,7 @@ CREATE TABLE IF NOT EXISTS `harmony_cooldown` (
   `metadata` text NOT NULL,
   PRIMARY KEY (`serial`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -517,7 +512,7 @@ CREATE TABLE IF NOT EXISTS `history_vehicle_bought` (
   `job` varchar(64) NOT NULL,
   `identifier` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -562,7 +557,7 @@ CREATE TABLE IF NOT EXISTS `house_objects` (
   `construction` varchar(50) DEFAULT NULL,
   `created` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -581,7 +576,7 @@ CREATE TABLE IF NOT EXISTS `house_plants` (
   PRIMARY KEY (`id`),
   KEY `building` (`building`),
   KEY `plantid` (`plantid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -593,7 +588,7 @@ CREATE TABLE IF NOT EXISTS `house_rents` (
   `payed` int(11) NOT NULL DEFAULT 0,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -612,7 +607,7 @@ CREATE TABLE IF NOT EXISTS `instagram_accounts` (
   UNIQUE KEY `username` (`username`) USING BTREE,
   KEY `phone` (`phone`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -623,7 +618,7 @@ CREATE TABLE IF NOT EXISTS `instagram_follow` (
   `following` int(11) NOT NULL DEFAULT 0,
   `updatedDate` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -635,7 +630,7 @@ CREATE TABLE IF NOT EXISTS `instagram_messages` (
   `time` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` longtext NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -648,7 +643,7 @@ CREATE TABLE IF NOT EXISTS `instagram_notifications` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `content` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -665,7 +660,7 @@ CREATE TABLE IF NOT EXISTS `instagram_posts` (
   `filter` tinytext DEFAULT NULL,
   `commentCount` int(11) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=525 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -678,7 +673,7 @@ CREATE TABLE IF NOT EXISTS `instagram_post_comments` (
   `time` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `postId` (`postId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4405 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -689,8 +684,7 @@ CREATE TABLE IF NOT EXISTS `instagram_stories` (
   `updatedDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `data` text NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=armscii8 COLLATE=armscii8_bin;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.items
@@ -701,7 +695,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `rare` tinyint(4) NOT NULL DEFAULT 0,
   `can_remove` tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -710,7 +704,7 @@ CREATE TABLE IF NOT EXISTS `job` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -735,7 +729,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `actions_menu_enabled` int(1) DEFAULT 1,
   `placeable_objects` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -750,7 +744,7 @@ CREATE TABLE IF NOT EXISTS `jobs_armories` (
   `identifier` varchar(80) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`,`marker_id`,`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -781,7 +775,7 @@ CREATE TABLE IF NOT EXISTS `jobs_data` (
   `object` varchar(50) DEFAULT NULL,
   `object_heading` float DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -795,7 +789,7 @@ CREATE TABLE IF NOT EXISTS `jobs_garages` (
   `plate` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`vehicle_id`) USING BTREE,
   KEY `identifier` (`identifier`,`marker_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -810,7 +804,7 @@ CREATE TABLE IF NOT EXISTS `jobs_shops` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `marker_id` (`marker_id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -822,7 +816,7 @@ CREATE TABLE IF NOT EXISTS `jobs_wardrobes` (
   `outfit` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -837,7 +831,7 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   `skin_male` longtext NOT NULL,
   `skin_female` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -853,7 +847,7 @@ CREATE TABLE IF NOT EXISTS `keep_bags_retrieval` (
   `claimed` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `characterId` (`characterId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -867,7 +861,7 @@ CREATE TABLE IF NOT EXISTS `lapraces` (
   `distance` int(11) DEFAULT NULL,
   `raceid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -883,7 +877,7 @@ CREATE TABLE IF NOT EXISTS `lation_coke_labs` (
   `users` longtext DEFAULT NULL,
   `stations` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -901,7 +895,7 @@ CREATE TABLE IF NOT EXISTS `lation_coke_plants` (
   `bucket` int(11) DEFAULT NULL,
   `owner` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -918,7 +912,7 @@ CREATE TABLE IF NOT EXISTS `lation_coke_players` (
   `cement` int(11) NOT NULL DEFAULT 0,
   `bricks` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -935,7 +929,7 @@ CREATE TABLE IF NOT EXISTS `lation_coke_tables` (
   `bucket` int(11) DEFAULT NULL,
   `owner` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -947,7 +941,7 @@ CREATE TABLE IF NOT EXISTS `lation_detecting` (
   `items_found` int(11) NOT NULL,
   `money_earned` int(11) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -963,7 +957,7 @@ CREATE TABLE IF NOT EXISTS `lation_meth_players` (
   `total_produced` int(11) NOT NULL DEFAULT 0,
   `total_supply_runs` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -982,7 +976,7 @@ CREATE TABLE IF NOT EXISTS `lation_meth_tables` (
   `bucket` int(11) DEFAULT NULL,
   `owner` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1006,7 +1000,7 @@ CREATE TABLE IF NOT EXISTS `lation_meth_warehouses` (
   `inputs` longtext DEFAULT NULL,
   `users` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1020,7 +1014,7 @@ CREATE TABLE IF NOT EXISTS `lation_mining` (
   `smelted` int(11) NOT NULL DEFAULT 0,
   `earned` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1032,7 +1026,7 @@ CREATE TABLE IF NOT EXISTS `lation_selling` (
   `total_sales` int(11) NOT NULL DEFAULT 0,
   `total_earned` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1052,7 +1046,7 @@ CREATE TABLE IF NOT EXISTS `lation_weed` (
   `bucket` int(11) DEFAULT NULL,
   `owner` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`plant_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1067,7 +1061,7 @@ CREATE TABLE IF NOT EXISTS `lation_weed_players` (
   `joints_rolled` int(11) NOT NULL DEFAULT 0,
   `weed_bagged` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1081,7 +1075,7 @@ CREATE TABLE IF NOT EXISTS `lation_weed_tables` (
   `bucket` int(11) DEFAULT NULL,
   `owner` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1090,7 +1084,7 @@ CREATE TABLE IF NOT EXISTS `licenses` (
   `type` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1099,7 +1093,7 @@ CREATE TABLE IF NOT EXISTS `lunar_fishing` (
   `user_identifier` varchar(50) NOT NULL,
   `xp` float NOT NULL,
   PRIMARY KEY (`user_identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1109,7 +1103,7 @@ CREATE TABLE IF NOT EXISTS `lunar_illegalbusiness` (
   `name` varchar(20) DEFAULT NULL,
   `data` longtext DEFAULT NULL,
   UNIQUE KEY `identifier` (`identifier`,`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1123,7 +1117,7 @@ CREATE TABLE IF NOT EXISTS `lunar_multijob` (
   `week` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`,`name`),
   KEY `idx_identifier` (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1132,7 +1126,7 @@ CREATE TABLE IF NOT EXISTS `lunar_multijob_accounts` (
   `name` varchar(50) NOT NULL,
   `balance` int(11) NOT NULL,
   PRIMARY KEY (`name`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1141,7 +1135,7 @@ CREATE TABLE IF NOT EXISTS `lunar_multijob_bonus` (
   `identifier` varchar(60) NOT NULL,
   `amount` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1150,7 +1144,7 @@ CREATE TABLE IF NOT EXISTS `lunar_multijob_duty` (
   `identifier` varchar(60) NOT NULL,
   `on_duty` tinyint(1) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1160,7 +1154,7 @@ CREATE TABLE IF NOT EXISTS `lunar_multijob_goals` (
   `grade` tinyint(4) NOT NULL,
   `goal` tinyint(4) NOT NULL,
   UNIQUE KEY `Index` (`name`,`grade`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1173,7 +1167,7 @@ CREATE TABLE IF NOT EXISTS `mail_accounts` (
   `password` varchar(50) DEFAULT '',
   `phone` varchar(50) DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1189,7 +1183,7 @@ CREATE TABLE IF NOT EXISTS `market_accounts` (
   `password` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1202,7 +1196,7 @@ CREATE TABLE IF NOT EXISTS `market_markets` (
   `ratings` text NOT NULL DEFAULT '[]',
   `coords` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1215,7 +1209,7 @@ CREATE TABLE IF NOT EXISTS `market_messages` (
   `messages` text NOT NULL,
   `isMarket` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1228,7 +1222,7 @@ CREATE TABLE IF NOT EXISTS `missions_creator_played_missions` (
   PRIMARY KEY (`identifier`,`template_id`) USING BTREE,
   KEY `fk_mc_played_missions_mc_templates` (`template_id`) USING BTREE,
   CONSTRAINT `fk_mc_played_missions_mc_templates` FOREIGN KEY (`template_id`) REFERENCES `missions_creator_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1242,8 +1236,7 @@ CREATE TABLE IF NOT EXISTS `missions_creator_statistics` (
   PRIMARY KEY (`template_id`) USING BTREE,
   UNIQUE KEY `template_id` (`template_id`) USING BTREE,
   CONSTRAINT `fk_mc_statistics_mc_templates` FOREIGN KEY (`template_id`) REFERENCES `missions_creator_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Keeps track of the missions statistics (likes, dislikes, success/fail count)';
-
+) ENGINE=InnoDB 
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.missions_creator_templates
@@ -1255,7 +1248,7 @@ CREATE TABLE IF NOT EXISTS `missions_creator_templates` (
   `stages` longtext NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1265,7 +1258,7 @@ CREATE TABLE IF NOT EXISTS `multicharacter_slots` (
   `slots` int(11) NOT NULL,
   PRIMARY KEY (`identifier`) USING BTREE,
   KEY `slots` (`slots`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1287,7 +1280,7 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `trunk` longtext DEFAULT NULL,
   `job` varchar(20) NOT NULL DEFAULT 'civ',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1297,7 +1290,7 @@ CREATE TABLE IF NOT EXISTS `ox_doorlock` (
   `name` varchar(50) NOT NULL,
   `data` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1308,7 +1301,7 @@ CREATE TABLE IF NOT EXISTS `ox_inventory` (
   `data` longtext DEFAULT NULL,
   `lastupdated` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   UNIQUE KEY `owner` (`owner`,`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1319,7 +1312,7 @@ CREATE TABLE IF NOT EXISTS `phone_app_store` (
   `ratings` text DEFAULT '[]',
   `downloads` int(11) DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1330,7 +1323,7 @@ CREATE TABLE IF NOT EXISTS `phone_backups` (
   `data` longtext NOT NULL,
   `owner` varchar(120) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1345,7 +1338,7 @@ CREATE TABLE IF NOT EXISTS `phone_bills` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1354,7 +1347,7 @@ CREATE TABLE IF NOT EXISTS `phone_blocked_phones` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uniqueId` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1373,7 +1366,7 @@ CREATE TABLE IF NOT EXISTS `phone_chatrooms` (
   `created` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `room_code` (`room_code`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB 
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1387,7 +1380,7 @@ CREATE TABLE IF NOT EXISTS `phone_chatroom_messages` (
   `is_pinned` tinyint(1) DEFAULT 0,
   `created` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1397,7 +1390,7 @@ CREATE TABLE IF NOT EXISTS `phone_favorite_contacts` (
   `identifier` varchar(50) NOT NULL DEFAULT '0',
   `phone` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1413,7 +1406,7 @@ CREATE TABLE IF NOT EXISTS `phone_gallery` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `type` (`type`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1426,8 +1419,7 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   `created` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `unreaded` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.phone_metadata
@@ -1436,7 +1428,7 @@ CREATE TABLE IF NOT EXISTS `phone_metadata` (
   `metadata` longtext DEFAULT NULL,
   `phoneNumber` varchar(50) DEFAULT '',
   PRIMARY KEY (`identifier`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1449,8 +1441,7 @@ CREATE TABLE IF NOT EXISTS `phone_notifies` (
   `app_name` text DEFAULT NULL,
   `msg_time` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.phone_recipes
@@ -1459,7 +1450,7 @@ CREATE TABLE IF NOT EXISTS `phone_recipes` (
   `number` varchar(50) NOT NULL DEFAULT '',
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1473,7 +1464,7 @@ CREATE TABLE IF NOT EXISTS `phone_yellowpages` (
   `price` int(11) DEFAULT 0,
   `created` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1490,7 +1481,7 @@ CREATE TABLE IF NOT EXISTS `player_contacts` (
   `isBlocked` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `identifier` (`identifier`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1508,7 +1499,7 @@ CREATE TABLE IF NOT EXISTS `player_garages` (
   `job` varchar(50) DEFAULT NULL,
   `gang` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1538,7 +1529,7 @@ CREATE TABLE IF NOT EXISTS `player_houses` (
   KEY `house` (`house`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE,
   KEY `citizenid` (`citizenid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1556,7 +1547,7 @@ CREATE TABLE IF NOT EXISTS `player_mails` (
   `medias` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `identifier` (`taker`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1571,7 +1562,7 @@ CREATE TABLE IF NOT EXISTS `player_outfits` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `citizenid_outfitname_model` (`citizenid`,`outfitname`,`model`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1582,7 +1573,7 @@ CREATE TABLE IF NOT EXISTS `player_outfit_codes` (
   `code` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `FK_player_outfit_codes_player_outfits` (`outfitid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1599,7 +1590,7 @@ CREATE TABLE IF NOT EXISTS `playlist_mixer` (
   `category` varchar(256) NOT NULL DEFAULT 'null',
   `que` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1609,7 +1600,7 @@ CREATE TABLE IF NOT EXISTS `protections` (
   `shop_id` varchar(64) NOT NULL,
   `amount` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1631,7 +1622,7 @@ CREATE TABLE IF NOT EXISTS `qs_billing` (
   `fees_amount` int(50) DEFAULT 0,
   `paid_date` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1642,7 +1633,7 @@ CREATE TABLE IF NOT EXISTS `radiocar_music` (
   `url` varchar(256) NOT NULL,
   `plate` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1652,7 +1643,7 @@ CREATE TABLE IF NOT EXISTS `radiocar_owned` (
   `spz` varchar(32) NOT NULL,
   `style` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1662,7 +1653,7 @@ CREATE TABLE IF NOT EXISTS `radiocar_playlist` (
   `playlist` text NOT NULL,
   `plate` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1675,7 +1666,7 @@ CREATE TABLE IF NOT EXISTS `rcore_gunrange_leaderboard` (
   `score` int(11) NOT NULL DEFAULT 0,
   `created_at` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1690,7 +1681,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison` (
   `updatedAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`prisoner_id`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1704,7 +1695,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_accounts` (
   `updatedAt` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`account_id`) USING BTREE,
   KEY `owner` (`owner`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1717,7 +1708,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_accounts_log` (
   `amount` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1735,7 +1726,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_coms` (
   KEY `owner` (`owner`) USING BTREE,
   KEY `zoneId` (`zoneId`) USING BTREE,
   CONSTRAINT `FK_Q27L` FOREIGN KEY (`zoneId`) REFERENCES `rcore_prison_coms_sessions` (`zoneId`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1746,7 +1737,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_coms_sessions` (
   `verticesDone` bigint(10) NOT NULL DEFAULT 0,
   PRIMARY KEY (`zoneId`),
   KEY `zoneId_index` (`zoneId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1760,7 +1751,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_logs` (
   `citizen_name` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1769,7 +1760,7 @@ CREATE TABLE IF NOT EXISTS `rcore_prison_stash` (
   `owner` varchar(255) NOT NULL,
   `stash` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`owner`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1789,7 +1780,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports` (
   `chat_room` text NOT NULL,
   `logger` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1801,7 +1792,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports_admin_chat` (
   `message` text NOT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1810,7 +1801,7 @@ CREATE TABLE IF NOT EXISTS `rcore_reports_tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tag` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1820,7 +1811,7 @@ CREATE TABLE IF NOT EXISTS `rcore_tattoos` (
   `tattoos` longtext DEFAULT NULL,
   PRIMARY KEY (`identifier`),
   UNIQUE KEY `rcore_tattoos_identifier_uindex` (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1831,7 +1822,7 @@ CREATE TABLE IF NOT EXISTS `rcore_tattoos_business` (
   `money` int(11) DEFAULT NULL,
   `owner` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1844,7 +1835,7 @@ CREATE TABLE IF NOT EXISTS `rented_vehicles` (
   `rent_price` int(11) NOT NULL,
   `owner` varchar(46) DEFAULT NULL,
   PRIMARY KEY (`plate`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1864,7 +1855,7 @@ CREATE TABLE IF NOT EXISTS `rivalries` (
   KEY `rivalries_i_defending_gang_id` (`defending_gang_id`),
   CONSTRAINT `rivalries_fk_attacking_gang_id` FOREIGN KEY (`attacking_gang_id`) REFERENCES `gangs` (`id`) ON DELETE CASCADE,
   CONSTRAINT `rivalries_fk_defending_gang_id` FOREIGN KEY (`defending_gang_id`) REFERENCES `gangs` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1876,7 +1867,7 @@ CREATE TABLE IF NOT EXISTS `robberies_creator_cargo_robberies` (
   `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1890,7 +1881,7 @@ CREATE TABLE IF NOT EXISTS `robberies_creator_heists` (
   `time_limit_minutes` int(11) NOT NULL DEFAULT 0,
   `stages` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1905,7 +1896,7 @@ CREATE TABLE IF NOT EXISTS `robberies_creator_plannings` (
   KEY `id` (`id`) USING BTREE,
   KEY `cargo_robbery_id` (`cargo_robbery_id`) USING BTREE,
   CONSTRAINT `cargo_robbery_id` FOREIGN KEY (`cargo_robbery_id`) REFERENCES `robberies_creator_cargo_robberies` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1916,7 +1907,7 @@ CREATE TABLE IF NOT EXISTS `society_moneywash` (
   `society` varchar(60) NOT NULL,
   `amount` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1942,8 +1933,7 @@ CREATE TABLE IF NOT EXISTS `sprays` (
   `interior` int(3) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.tiktok_users
@@ -1965,7 +1955,7 @@ CREATE TABLE IF NOT EXISTS `tiktok_users` (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username` (`username`) USING BTREE,
   KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -1976,8 +1966,7 @@ CREATE TABLE IF NOT EXISTS `tiktok_videos` (
   `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `data` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.tinder_accounts
@@ -1993,7 +1982,7 @@ CREATE TABLE IF NOT EXISTS `tinder_accounts` (
   `gender` varchar(10) DEFAULT NULL,
   `interested` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2006,7 +1995,7 @@ CREATE TABLE IF NOT EXISTS `tinder_messages` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2017,7 +2006,7 @@ CREATE TABLE IF NOT EXISTS `tinder_swipers` (
   `targetId` int(11) NOT NULL DEFAULT 0,
   `liked` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2030,7 +2019,7 @@ CREATE TABLE IF NOT EXISTS `tuning_upgrades` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `zone_name` (`zone`,`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2049,7 +2038,7 @@ CREATE TABLE IF NOT EXISTS `twitter_accounts` (
   `background` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2060,7 +2049,7 @@ CREATE TABLE IF NOT EXISTS `twitter_follow` (
   `following` int(11) DEFAULT NULL,
   `updatedDate` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2072,7 +2061,7 @@ CREATE TABLE IF NOT EXISTS `twitter_messages` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` text NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2085,7 +2074,7 @@ CREATE TABLE IF NOT EXISTS `twitter_notifications` (
   `tweetId` int(11) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2096,7 +2085,7 @@ CREATE TABLE IF NOT EXISTS `twitter_retweets` (
   `tweetId` int(11) NOT NULL DEFAULT 0,
   `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2112,7 +2101,7 @@ CREATE TABLE IF NOT EXISTS `twitter_tweets` (
   `comments` text DEFAULT '[]',
   `retweets` text DEFAULT '[]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2127,7 +2116,7 @@ CREATE TABLE IF NOT EXISTS `uber_rider_last_transactions` (
   `price` int(11) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2170,7 +2159,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `blood_type` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`identifier`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2180,7 +2169,7 @@ CREATE TABLE IF NOT EXISTS `user_licenses` (
   `type` varchar(60) NOT NULL,
   `owner` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2191,7 +2180,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `price` int(11) NOT NULL,
   `category` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`model`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2204,7 +2193,7 @@ CREATE TABLE IF NOT EXISTS `vehiclesdisplayed` (
   `job` varchar(64) DEFAULT NULL,
   `extra` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2220,7 +2209,7 @@ CREATE TABLE IF NOT EXISTS `vehicles_to_buy` (
   `licensePrice` int(11) DEFAULT NULL,
   `job` varchar(64) NOT NULL DEFAULT 'dealer',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=276 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2229,7 +2218,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2242,7 +2231,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_sold` (
   `soldby` varchar(50) NOT NULL,
   `date` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2255,7 +2244,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_tuning` (
   `nitrous` int(3) DEFAULT 0,
   `hasNitrous` int(1) DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2269,7 +2258,7 @@ CREATE TABLE IF NOT EXISTS `wasabi_adminmenu_bans` (
   `BannedReason` varchar(100) DEFAULT NULL,
   `BannedTime` varchar(10) DEFAULT NULL,
   `Time` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2278,7 +2267,7 @@ CREATE TABLE IF NOT EXISTS `wasabi_evidence` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2286,7 +2275,7 @@ CREATE TABLE IF NOT EXISTS `wasabi_evidence` (
 CREATE TABLE IF NOT EXISTS `wasabi_fingerprints` (
   `identifier` varchar(100) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2296,7 +2285,7 @@ CREATE TABLE IF NOT EXISTS `wasabi_manual_prints` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2309,7 +2298,7 @@ CREATE TABLE IF NOT EXISTS `weazel` (
   `image` text DEFAULT NULL,
   `created` varchar(50) DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2324,7 +2313,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_accounts` (
   `created` timestamp NULL DEFAULT current_timestamp(),
   `hide_receipts` int(11) DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2335,7 +2324,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_call_history` (
   `calledId` int(11) DEFAULT NULL,
   `time` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2345,7 +2334,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_call_history_users` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `callId` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2359,8 +2348,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_chats` (
   `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `messages` text DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+) ENGINE=InnoDB
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla newsite.whatsapp_group_admins
@@ -2369,7 +2357,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_group_admins` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `groupId` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2379,7 +2367,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_group_members` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `groupId` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2388,7 +2376,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_status` (
   `userId` int(11) NOT NULL DEFAULT 0,
   `data` text DEFAULT NULL,
   PRIMARY KEY (`userId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2396,7 +2384,7 @@ CREATE TABLE IF NOT EXISTS `whatsapp_status` (
 CREATE TABLE IF NOT EXISTS `whitelist` (
   `identifier` varchar(60) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2405,7 +2393,7 @@ CREATE TABLE IF NOT EXISTS `wsb_cctvcameras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2414,7 +2402,7 @@ CREATE TABLE IF NOT EXISTS `wsb_speedtraps` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` longtext DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB
 
 -- La exportación de datos fue deseleccionada.
 
@@ -2423,30 +2411,4 @@ CREATE TABLE IF NOT EXISTS `zsx_multicharacter_slots` (
   `identifier` varchar(255) NOT NULL,
   `amount` int(1) NOT NULL,
   PRIMARY KEY (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para disparador newsite.instagram_decrement_comment_count
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
-DELIMITER //
-CREATE TRIGGER `instagram_decrement_comment_count` AFTER DELETE ON `instagram_post_comments` FOR EACH ROW BEGIN
-    UPDATE instagram_posts SET commentCount = commentCount + 1 WHERE id = OLD.postId;
-END//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
--- Volcando estructura para disparador newsite.instagram_increment_comment_count
-SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
-DELIMITER //
-CREATE TRIGGER `instagram_increment_comment_count` AFTER INSERT ON `instagram_post_comments` FOR EACH ROW BEGIN
-    UPDATE instagram_posts SET commentCount = commentCount + 1 WHERE id = NEW.postId;
-END//
-DELIMITER ;
-SET SQL_MODE=@OLDTMP_SQL_MODE;
-
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+) ENGINE=InnoDB
