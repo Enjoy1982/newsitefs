@@ -1639,48 +1639,6 @@ CREATE TABLE IF NOT EXISTS `market_messages` (
 -- Volcando datos para la tabla newsite.market_messages: ~0 rows (aproximadamente)
 DELETE FROM `market_messages`;
 
--- Volcando estructura para tabla newsite.missions_creator_played_missions
-CREATE TABLE IF NOT EXISTS `missions_creator_played_missions` (
-  `identifier` varchar(46) NOT NULL,
-  `template_id` int(11) NOT NULL,
-  `last_played` int(11) NOT NULL,
-  `completed` bit(1) NOT NULL DEFAULT b'0',
-  PRIMARY KEY (`identifier`,`template_id`) USING BTREE,
-  KEY `fk_mc_played_missions_mc_templates` (`template_id`) USING BTREE,
-  CONSTRAINT `fk_mc_played_missions_mc_templates` FOREIGN KEY (`template_id`) REFERENCES `missions_creator_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-
--- Volcando datos para la tabla newsite.missions_creator_played_missions: ~0 rows (aproximadamente)
-DELETE FROM `missions_creator_played_missions`;
-
--- Volcando estructura para tabla newsite.missions_creator_statistics
-CREATE TABLE IF NOT EXISTS `missions_creator_statistics` (
-  `template_id` int(11) NOT NULL,
-  `likes` int(11) NOT NULL DEFAULT 0,
-  `dislikes` int(11) NOT NULL DEFAULT 0,
-  `success_count` int(11) NOT NULL DEFAULT 0,
-  `fail_count` int(11) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`template_id`) USING BTREE,
-  UNIQUE KEY `template_id` (`template_id`) USING BTREE,
-  CONSTRAINT `fk_mc_statistics_mc_templates` FOREIGN KEY (`template_id`) REFERENCES `missions_creator_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci COMMENT='Keeps track of the missions statistics (likes, dislikes, success/fail count)';
-
--- Volcando datos para la tabla newsite.missions_creator_statistics: ~0 rows (aproximadamente)
-DELETE FROM `missions_creator_statistics`;
-
--- Volcando estructura para tabla newsite.missions_creator_templates
-CREATE TABLE IF NOT EXISTS `missions_creator_templates` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `label` varchar(50) NOT NULL,
-  `description` longtext DEFAULT NULL,
-  `options` longtext NOT NULL,
-  `stages` longtext NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `id` (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
-
--- Volcando datos para la tabla newsite.missions_creator_templates: ~0 rows (aproximadamente)
-DELETE FROM `missions_creator_templates`;
 
 -- Volcando estructura para tabla newsite.multicharacter_slots
 CREATE TABLE IF NOT EXISTS `multicharacter_slots` (
