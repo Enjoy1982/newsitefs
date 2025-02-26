@@ -919,7 +919,17 @@ ALTER TABLE `users`
 ALTER TABLE `user_licenses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
   
+--
+-- Fine Types
+--
+	CREATE TABLE `fine_types` (
+	`id` int NOT NULL AUTO_INCREMENT,
+	`label` varchar(255) DEFAULT NULL,
+	`amount` int DEFAULT NULL,
+	`category` int DEFAULT NULL,
 
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
 
 INSERT INTO `fine_types` (label, amount, category) VALUES
 	('Misuse of a horn', 30, 0),
