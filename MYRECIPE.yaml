@@ -1,0 +1,173 @@
+$engine: 3
+$onesync: on
+name: ESX Legacy and OX
+author: Njoy_it
+description: The official recipe of the most popular FiveM RP framework, containing Jobs, Housing, Vehicles & more!
+
+tasks:
+  # Descargar recursos predeterminados de CFX
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources/[cfx-default]
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
+
+  # Configuración inicial (server.cfg, loading screen y base de datos)
+  - action: download_github
+    src: https://github.com/Enjoy1982/newsitefs
+    ref: main
+    dest: ./tmp/recipe
+
+  - action: move_path
+    src: ./tmp/recipe/server_configs
+    dest: ./server_configs
+
+  - action: move_path
+    src: ./tmp/recipe/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./tmp/recipe/newsiteLogo.png
+    dest: ./newsiteLogo.png
+
+  # Conectar y ejecutar SQL en la base de datos
+  - action: connect_database
+  - action: query_database
+    file: ./server_configs/sql_NEWSITEV2.sql
+
+  # Descargar ESX Core y Addons
+  - action: download_github
+    src: https://github.com/esx-framework/esx-core
+    ref: main
+    dest: ./resources/[core]/esx-core
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addonaccount
+    ref: main
+    dest: ./resources/[esx_addons]/esx_addonaccount
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addoninventory
+    ref: main
+    dest: ./resources/[esx_addons]/esx_addoninventory
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_datastore
+    ref: main
+    dest: ./resources/[esx_addons]/esx_datastore
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_service
+    ref: main
+    dest: ./resources/[esx_addons]/esx_service
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_basicneeds
+    ref: main
+    dest: ./resources/[esx_addons]/esx_basicneeds
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_society
+    ref: main
+    dest: ./resources/[esx_addons]/esx_society
+
+  # Descargar y descomprimir OX Resources
+  - action: download_file
+    path: ./tmp/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/ox_lib.zip
+
+  - action: download_file
+    path: ./tmp/ox_target.zip
+    url: https://github.com/overextended/ox_target/releases/latest/download/ox_target.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/ox_target.zip
+
+  - action: download_file
+    path: ./tmp/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/oxmysql.zip
+
+  - action: download_file
+    path: ./tmp/ox_inventory.zip
+    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/ox_inventory.zip
+
+  # Descargar recursos adicionales
+  - action: download_github
+    src: https://github.com/iLLeniumStudios/illenium-appearance
+    ref: main
+    dest: ./resources/[standalone]/illenium-appearance
+
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: main
+    dest: ./resources/[standalone]/pma-voice
+
+  - action: download_github
+    src: https://github.com/Xogy/xsound
+    ref: master
+    dest: ./resources/[standalone]/xsound
+
+  - action: download_github
+    src: https://github.com/BaziForYou/MugShotBase64
+    ref: main
+    dest: ./resources/[plugins]/MugShotBase64
+
+  - action: download_github
+    src: https://github.com/ultrahacx/ultra-voltlab
+    ref: main
+    dest: ./resources/[plugins]/ultra-voltlab
+
+  - action: download_github
+    src: https://github.com/mkafrin/mka-lasers
+    ref: main
+    dest: ./resources/[plugins]/mka-lasers
+
+  - action: download_github
+    src: https://github.com/utkuali/Finger-Print-Hacking-Game
+    ref: master
+    dest: ./resources/[plugins]/fingerprint-hacking
+
+  - action: download_github
+    src: https://github.com/Manason/mana_audio
+    ref: main
+    dest: ./resources/[standalone]/mana_audio
+
+  - action: download_github
+    src: https://github.com/Scullyy/scully_emotemenu
+    ref: main
+    dest: ./resources/[standalone]/scully_emotemenu
+
+  # Mapas y extras
+  - action: download_github
+    src: https://github.com/Bob74/bob74_ipl
+    ref: master
+    dest: ./resources/[maps]/bob74_ipl
+
+  # Eliminar archivos innecesarios de ESX Core
+  - action: remove_path
+    path: ./resources/[core]/esx_chat_theme
+  - action: remove_path
+    path: ./resources/[core]/esx_identity
+  - action: remove_path
+    path: ./resources/[core]/esx_multicharacter
+  - action: remove_path
+    path: ./resources/[core]/esx_loadingscreen
+  - action: remove_path
+    path: ./resources/[core]/esx_skin
+  - action: remove_path
+    path: ./resources/[core]/skinchanger
+
+  # Limpieza final
+  - action: remove_path
+    path: ./tmp
